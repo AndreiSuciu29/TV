@@ -1,20 +1,21 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { useContext, memo } from 'react';
 import ShowCard from '../Card';
-import mockShows from '../../../mock/mockShows';
-import { Show } from '../../../types';
 import './List.css';
+import { ApplicationContext } from '../../Context';
 
 const ShowList = () => {
-    const [showList, setShowList] = useState<Show[]>([]);
-    useEffect(() => {
-        setShowList(mockShows);
-    }, []);
+    const {shows} = useContext(ApplicationContext);
 
     return (
         <div className="show-list">
-            {showList.map(({id, ...restProps}) => (
-                <ShowCard key={id} {...restProps}/>
-            ))}
+            {shows && shows.length ?
+                shows.map(({id, ...restProps}) => (
+                    <ShowCard key={id} {...restProps}/>
+                )):
+                <div className="no-shows-found">
+                    No shows found
+                </div>
+            }
         </div>
     )
 };

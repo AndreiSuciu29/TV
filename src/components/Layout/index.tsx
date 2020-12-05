@@ -1,4 +1,6 @@
-import React, { Fragment, memo } from 'react';
+import React, { Fragment, memo, useEffect } from 'react';
+import { ApplicationContextProvider } from '../Context';
+import SearchShow from '../SearchShow';
 import ShowList from '../Show/List';
 import Header from './Header';
 
@@ -8,9 +10,12 @@ const Layout = () => {
             <div className="header">
                 <Header />
             </div>
-            <div className="main-content">
-                <ShowList />
-            </div>
+            <ApplicationContextProvider>
+                <div className="main-content">
+                    <SearchShow />
+                    <ShowList />
+                </div>
+            </ApplicationContextProvider>
         </Fragment>
     )
 
