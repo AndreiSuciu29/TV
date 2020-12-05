@@ -1,4 +1,5 @@
 import React, { ChangeEvent, Fragment, SyntheticEvent, useContext, useState } from 'react';
+import { Button } from '@material-ui/core';
 import fetchShows from '../../actions/fetchShows';
 import { ApplicationContext } from '../Context';
 
@@ -20,7 +21,7 @@ const SearchShow = () => {
         <Fragment>
             <form onSubmit={onSubmitHandler}>
                 <input onChange={onChangeHandler} type="text" placeholder="Search for a show that you like" name="search-show" value={searchTerm}/>
-                <button type="submit">Search</button>
+                <Button>Search</Button>
             </form>
         </Fragment>
     )
