@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import mockShows from '../../mock/mockShows';
-import { Show } from '../../types';
+import Show from '../../types/Show';
 
 interface Props {
     children: React.ReactNode;

@@ -1,4 +1,4 @@
-import { Show } from "../types";
+import Show from "../types/Show";
 
 const mockShows: Array<Show> = [
     {

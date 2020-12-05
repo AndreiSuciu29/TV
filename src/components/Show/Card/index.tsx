@@ -1,5 +1,5 @@
 import React from 'react';
-import { Show } from '../../../types';
+import Show from '../../../types/Show';
 import './Card.css';
 
 const DESCRIPTION_NUMBER_OF_CHARACTERS = 45;

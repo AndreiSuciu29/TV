@@ -1,7 +1,24 @@
 import React, { ChangeEvent, Fragment, SyntheticEvent, useContext, useState } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Input, } from '@material-ui/core';
+import styled from "styled-components";
 import fetchShows from '../../actions/fetchShows';
 import { ApplicationContext } from '../Context';
+import './SearchShow.css';
+
+const StyledInput = styled(Input)`
+    && {
+        color: #000;
+        display: flex;
+        padding-right: 20px;
+        background-color: #fff;
+    }
+`;
+
+const StyledButton = styled(Button)`
+    && {
+        color: #fff;
+    }
+`;
 
 const SearchShow = () => {
     const {setShows} = useContext(ApplicationContext);
@@ -19,9 +36,9 @@ const SearchShow = () => {
 
     return (
         <Fragment>
-            <form onSubmit={onSubmitHandler}>
-                <input onChange={onChangeHandler} type="text" placeholder="Search for a show that you like" name="search-show" value={searchTerm}/>
-                <Button>Search</Button>
+            <form onSubmit={onSubmitHandler} className="search-form">
+                <StyledInput onChange={onChangeHandler}/>
+                <StyledButton onClick={onSubmitHandler}>Search</StyledButton>
             </form>
         </Fragment>
     )
