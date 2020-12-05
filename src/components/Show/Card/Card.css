@@ -1,0 +1,50 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #5e5e5e;
+    margin: 10px;
+    padding: 16px;
+    border-radius: 8px;
+    width: 300px;
+    height: auto;
+}
+
+.card .card-poster {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 200px;
+    max-width: 100%;
+}
+
+.card .card-poster img {
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.card .show-highlight {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.card .show-highlight .attribute-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.card .show-highlight .attribute-container:not(:last-child) {
+    border-bottom: 1px solid;
+}
+
+.card .show-highlight .attribute-container .attribute-name {
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.card .show-highlight .attribute-container .attribute-value {
+    float: right;
+}
