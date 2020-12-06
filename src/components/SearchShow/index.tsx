@@ -1,8 +1,8 @@
 import React, { ChangeEvent, Fragment, SyntheticEvent, useContext, useState } from 'react';
-import { Button, Input, } from '@material-ui/core';
+import { Button, Input} from '@material-ui/core';
 import styled from "styled-components";
-import fetchShows from '../../actions/fetchShows';
-import { ApplicationContext } from '../Context';
+import { searchShows } from '../../actions/shows';
+import { ShowsContext } from '../Context/ShowsContext';
 import './SearchShow.css';
 
 const StyledInput = styled(Input)`
@@ -21,13 +21,14 @@ const StyledButton = styled(Button)`
 `;
 
 const SearchShow = () => {
-    const {setShows} = useContext(ApplicationContext);
+    const {setShows} = useContext(ShowsContext);
     const [searchTerm, setSearchTerm] = useState('');
 
     const onSubmitHandler = (event: SyntheticEvent) => {
         event.preventDefault();
-        const shows = fetchShows(searchTerm);
+        const shows = searchShows(searchTerm);
         setShows(shows);
+        setSearchTerm('');
     };
 
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +38,7 @@ const SearchShow = () => {
     return (
         <Fragment>
             <form onSubmit={onSubmitHandler} className="search-form">
-                <StyledInput onChange={onChangeHandler}/>
+                <StyledInput onChange={onChangeHandler} value={searchTerm}/>
                 <StyledButton onClick={onSubmitHandler}>Search</StyledButton>
             </form>
         </Fragment>

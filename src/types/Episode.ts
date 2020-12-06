@@ -1,6 +1,7 @@
 export default interface Episode {
+    id: number;
+    seasonId: number;
     name: string;
-    firstAired: string;
     image?: string;
     siteRating: number;
     moreDetails: {

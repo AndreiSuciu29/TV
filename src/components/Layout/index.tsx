@@ -1,7 +1,5 @@
-import React, { Fragment, memo, useEffect } from 'react';
-import { ApplicationContextProvider } from '../Context';
-import SearchShow from '../SearchShow';
-import ShowList from '../Show/List';
+import React, { Fragment } from 'react';
+import Routes from '../Routes';
 import Header from './Header';
 import './Layout.css';
 
@@ -11,15 +9,15 @@ const Layout = () => {
             <div className="header">
                 <Header />
             </div>
-            <ApplicationContextProvider>
-                <div className="main-content" style={{ background: `url('${process.env.PUBLIC_URL}/tv_shows_background.jpg')`, backgroundRepeat: 'repeat'}}>
-                    <SearchShow />
-                    <ShowList />
-                </div>
-            </ApplicationContextProvider>
+            <div className="main-content" style={{
+                background: `url('${process.env.PUBLIC_URL}/tv_shows_background.jpg')`,
+                backgroundRepeat: 'repeat',
+                paddingTop: 20
+            }}>
+                <Routes />
+            </div>
         </Fragment>
-    )
-
+    );
 };
 
-export default memo(Layout);
+export default Layout;

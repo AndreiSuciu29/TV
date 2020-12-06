@@ -13,10 +13,6 @@
     width: 100px;
 }
 
-.header-container .title {
-    display:flex;
-    align-items: center;
-    font-weight: 700;
-    padding: 5px 20px;
-    color: #fff;
+.header-container .search-container {
+    margin-right: 25px;
 }

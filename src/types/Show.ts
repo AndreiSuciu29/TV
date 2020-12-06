@@ -1,4 +1,5 @@
 import Schedule from './Schedule';
+import Season from './Season';
 
 export default interface Show {
     id: number;
@@ -11,4 +12,5 @@ export default interface Show {
     genre: Array<string>;
     siteRating: number;
     schedule?: Schedule;
+    seasons?: Array<Season>;
 };

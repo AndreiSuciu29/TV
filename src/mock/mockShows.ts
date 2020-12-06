@@ -10,7 +10,7 @@ const mockShows: Array<Show> = [
         networks: ['Netflix'],
         description: 'Short description',
         genre: ['Romance', 'Comedy'],
-        siteRating: 5,
+        siteRating: 5
     },
     {
         id: 2,

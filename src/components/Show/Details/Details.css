@@ -1,0 +1,27 @@
+.details-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-content .information { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.details-content .information .details-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid;
+    padding: 5px 0;
+}
+
+.details-image {
+    max-width: 350px; 
+}
+
+.details-image img {
+    width: 350px;
+}

@@ -12,25 +12,26 @@ interface Context {
 }
 
 const initialValues: Context = {
+    shows: [],
     setShows: () => {}
 };
 
-const ApplicationContext = React.createContext(initialValues);
+const ShowsContext = React.createContext(initialValues);
 
-const ApplicationContextProvider = ({children}: Props): JSX.Element => {
+const ShowsContextProvider = ({children}: Props): JSX.Element => {
     const [shows, setShows] = useState<Array<Show> | undefined>();
     useEffect(() => {
         setShows(mockShows);
     }, []);
 
     return (
-        <ApplicationContext.Provider value={{shows, setShows}}>
+        <ShowsContext.Provider value={{shows, setShows}}>
             { children }
-        </ApplicationContext.Provider>
+        </ShowsContext.Provider>
     );
 };
 
 export {
-    ApplicationContext,
-    ApplicationContextProvider
+    ShowsContext,
+    ShowsContextProvider
 };
