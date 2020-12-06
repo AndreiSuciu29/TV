@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ShowsContext } from '../Context/ShowsContext';
-import ShowDetails from '../Show/Details';
+import ShowDetails from '../../pages/ShowDetails';
 import ShowList from '../Show/List';
 import NotFound from '../Show/NotFound';
 
@@ -13,7 +13,7 @@ const Routes = () => {
             <Route path="/" exact>
                 <ShowList shows={shows} />
             </Route>
-            <Route path="/details/:id" component={ShowDetails} />
+            <Route exact path="/details/:id" component={ShowDetails} />
             <Route path="*" component={NotFound} />
         </Switch>
     );

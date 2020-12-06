@@ -1,11 +1,11 @@
 import { Typography } from '@material-ui/core';
 import styled from 'styled-components';
 
-const StyledTypography = styled(Typography)<{ header?: boolean }>`
+const StyledTypography = styled(Typography)<{ type?: string }>`
     & {
         background-color: #fff;
-        font-weight: ${props => props.header ? 700 : 400 } !important;
-        padding-right: ${props => props.header ? '20px' : 0 };
+        font-weight: ${props => props.type === 'header' ? 700 : 400 } !important;
+        padding-right: ${props => props.type === 'header' ? '20px' : 0 };
     }
 `;
 

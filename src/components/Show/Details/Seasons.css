@@ -1,0 +1,28 @@
+.seasons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.seasons-container .seasons-tabs {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.seasons-container .seasons-tabs .season-tab {
+    padding: 10px;
+    margin: 0 10px;
+    box-shadow: 10px 5px 5px #c9c9c9;
+    cursor: pointer;
+}
+
+.seasons-container .season-episodes {
+    display: inline-flex;
+    height: 200px;
+    overflow-x: scroll;
+}
+
+.removePadding {
+    padding: 0;
+    margin: 0;
+}

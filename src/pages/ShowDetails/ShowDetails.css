@@ -1,6 +1,7 @@
 .details-content {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .details-content .information { 
@@ -24,4 +25,9 @@
 
 .details-image img {
     width: 350px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
 }

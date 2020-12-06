@@ -40,4 +40,6 @@ const mockEpisodes: Array<Episode> = [{
         director: 'Director 1',
         description: 'The first episode is really good.'
     }
-}]
+}];
+
+export default mockEpisodes;

@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import SearchShow from '../../SearchShow';
 import './Header.css';
 
 const Header = () => {
+    let location = useLocation<any>();
+
     return (
         <div className="header-container">
             <Link to="/">
@@ -11,9 +13,10 @@ const Header = () => {
                 <img src={process.env.PUBLIC_URL + '/logo192.png'} alt="Logo" />
             </div>
             </Link>
-            <div className="search-container">
+            { location.pathname === '/' && <div className="search-container">
                 <SearchShow />
             </div>
+            }
         </div>
     );
 };
