@@ -17,7 +17,7 @@ const mockEpisodes: Array<Episode> = [{
     image: '',
     siteRating: 3,
     moreDetails: {
-        director: 'Director 1',
+        director: 'Director 2',
         description: 'The first episode is really good.'
     }
 }, {
@@ -27,7 +27,7 @@ const mockEpisodes: Array<Episode> = [{
     image: '',
     siteRating: 2,
     moreDetails: {
-        director: 'Director 1',
+        director: 'Director 3',
         description: 'The first episode is really good.'
     }
 }, {
@@ -37,7 +37,7 @@ const mockEpisodes: Array<Episode> = [{
     image: '',
     siteRating: 2,
     moreDetails: {
-        director: 'Director 1',
+        director: 'Director 4',
         description: 'The first episode is really good.'
     }
 }];

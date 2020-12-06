@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Episode from '../../../types/Episode';
 import Season from '../../../types/Season';
+import SimpleDialog from './Modal';
 import './Seasons.css';
 
 interface Props {
@@ -9,12 +10,23 @@ interface Props {
 
 const Seasons = (props: Props) => {
     const [seasonNumber, setSeasonNumber] = useState(0);
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const changeSeason = (seasonNumber: number) => () => {
         setSeasonNumber(seasonNumber);
     }
 
     const { seasons } = props;
+
+    console.log('open', open);
 
     return (
         <div className="seasons-container">
@@ -25,7 +37,7 @@ const Seasons = (props: Props) => {
             </div>
             <div className="season-episodes">
                 {seasons && seasons[seasonNumber] && seasons[seasonNumber]?.episodes && seasons[seasonNumber].episodes?.map((episode: Episode) => (
-                <div key={episode.id} style={{
+                <div onClick={handleClickOpen} key={episode.id} style={{
                         background: `url('${episode.image || process.env.PUBLIC_URL}/logo192.png')`,
                         backgroundRepeat: 'no-repeat',
                         width: '200px',
@@ -36,6 +48,7 @@ const Seasons = (props: Props) => {
                     }}>
                         <h2 className="removePadding">{episode.name}</h2>
                         <p className="removePadding">Rating: {episode.siteRating}</p>
+                        <SimpleDialog episode={episode} open={open} onClose={handleClose} />
                     </div>
                 ))}
             </div>
